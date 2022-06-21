@@ -1,0 +1,275 @@
+
+body {
+    background-image: url('bg-hero-desktop.svg');
+    margin: 0px;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+} 
+header p.logo{
+  flex: 50%;
+}
+
+header p.try-it{
+  flex: 50%;
+  align-self: right;
+  text-align: right;
+}
+
+header p.try-it button{
+  color: hsl(192, 100%, 9%);
+  background-color: hsl(195, 40%, 96%);
+  
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 2px 1px  rgb(225 216 216);
+  
+  text-align: center;
+  font-family: 'Poppins';
+
+  padding: 5px 15px;
+  
+}
+
+main{
+  background: white;
+}
+
+main div.box{
+  display: grid;
+  background: white;
+  grid-gap: 10px;
+  padding: 50px;
+  margin: 0px 40px;
+  margin-bottom: 20px;
+  grid-template-columns: 40% 50% 10%;
+  max-height: 500px;
+  border: 1px solid  rgb(225 216 216);;
+  border-radius: 10px;
+  box-shadow: 2px 1px  rgb(225 216 216);
+}
+
+main div.box:first-child{
+  background: #F0FBFF;
+  margin: 0px;
+  margin-bottom: 40px;
+  box-shadow: none;
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid #ede9e9;
+  border-radius: unset;
+}
+
+main div.box:last-child{
+  margin: 0px auto;
+  margin-bottom: -50px;
+  padding: 10px;
+  width: 70%;
+  position: relative;
+  z-index: 5;
+  grid-template-columns: 1fr;
+}
+
+main div.box:last-child div.text-content{
+  padding: 0px;
+  margin: 2px;
+  text-align: center;
+  align-self: center;
+}
+  
+main div.box div.text-content{
+  padding: 10px;
+  text-align: center;
+}
+
+
+main div.box div.picture-content{
+  
+  height: 100%;
+  margin-top: 50px;
+}
+
+main div.box div.picture-content img{
+  max-height: 90%;
+  max-width: 90%;
+  padding: 10px;
+}
+
+main div.box div.text-content h2.rubric{
+  text-align: left;
+}
+
+main div.box div.text-content p.story{
+  font-family: 'Open sans';
+  color: hsl(208, 11%, 55%);
+  text-align: left;
+  
+}
+
+footer{
+  background: hsl(192, 100%, 9%);
+  color: white;
+  z-index: -1;
+}
+
+colors{
+  color: hsl(322, 100%, 66%);
+  color: hsl(193, 100%, 96%);
+  color: hsl(192, 100%, 9%);
+  color: hsl(208, 11%, 55%);
+}
+
+
+button{
+  background-color: hsl(322, 100%, 66%);
+  box-shadow: 2px 1px  rgb(225 216 216);
+  color: hsl(193, 100%, 96%);
+  border: 0;
+  border-radius: 20px;
+  padding: 15px; 
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover{
+  opacity: 0.5;
+}
+
+h2, h3{
+  color: hsl(192, 100%, 9%);
+  font-family: 'Poppins', sans-serif;
+}
+
+footer div.website-brand { grid-area: wb; font-size: 18px;}
+footer div.website-info { grid-area: wi; grid-column: 1; }
+footer div.website-links.wl-1 { grid-area: wl1; }
+footer div.website-links.wl-2 { grid-area: wl2; }
+footer div.website-sm-links { grid-area: wsm; }
+footer div.website-copyright { grid-area: wsm; }
+
+footer div.website-info p{ width: 75%; }
+footer div.website-info p span{ margin-top: -5px; padding-right: 10px;}
+
+
+footer div.website-sm-links span{
+  margin: 10px;
+}
+
+footer div.website-links a{ text-decoration: none;}
+footer div.website-links a:hover{ text-decoration: underline;}
+
+footer div.website-sm-links span a{
+  padding: 7px;
+  border: 1px solid white;
+  border-radius: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+footer div.website-sm-links span a:hover{
+  border-color:  hsl(322, 100%, 66%);
+}
+
+footer div.website-sm-links span:hover{
+  color: hsl(322, 100%, 66%);
+  border-color:  hsl(322, 100%, 66%);
+}
+
+footer{
+  display: grid;
+  grid-template-areas:
+    'wb wb wb wb'
+    'wi wl1 wl2 wsm'
+    'wcr wcr wcr wcr'
+    ;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  padding: 50px 10px;
+  gap: 5px;
+  
+}
+footer a{
+  color: white;
+}
+
+  @media screen and (max-width: 400px){
+    main div.box{
+      grid-template-columns: 1fr;
+      margin-bottom: 15px;
+    }
+
+    body{
+      background-image: url('bg-hero-mobile.svg;');
+    }
+
+    footer{
+      display: block;
+    }
+
+    footer div{
+      display: flex;
+      flex-direction: column;
+    }
+    footer div.website-sm-links, footer div.website-copyright{
+      flex-direction: row;
+      justify-content: center;
+    }
+    footer div.website-brand{
+      flex-direction: row;
+      justify-content: left;
+    }
+    
+  }
+  
+  .website-info p img{
+    margin-right: 10px;
+  }
+  
+  /* #logo{
+    background-color: hsl(192, 100%, 9%);
+    color: hsl(193, 100%, 96%);
+    border: 5px;
+    box-shadow: 0 0 0 0;
+    border-radius: 50px;
+    padding: 3px; 
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  #logo1{
+    background-color: hsl(192, 100%, 9%);
+    color: hsl(193, 100%, 96%);
+    border: 5px;
+    box-shadow: 0 0 0 0;
+    border-radius: 50px;
+    padding: 3px; 
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  #logo2{
+    background-color: hsl(192, 100%, 9%);
+    color: hsl(193, 100%, 96%);
+    border: 5px;
+    box-shadow: 0 0 0 0;
+    border-radius: 50px;
+    padding: 3px; 
+    margin: 5px;
+    text-align: center;
+    cursor: pointer; */
+  
+  #logo:hover{
+    color: hsl(322, 100%, 66%);
+  }
+  #logo1:hover{
+    color: hsl(322, 100%, 66%);
+  }
+  #logo2:hover{
+    color: hsl(322, 100%, 66%);
+  }
+  footer div.website-copyright {
+    margin-top: 50px;
+  }
